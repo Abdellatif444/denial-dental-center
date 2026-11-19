@@ -1,0 +1,35 @@
+{
+ "count": 228,
+ "pattern": "media/frames/f_%04d.webp",
+ "width": 600,
+ "chapters": [
+  {
+   "frame": 0,
+   "label": "Avenue Hassan II, immeuble Timitar"
+  },
+  {
+   "frame": 16,
+   "label": "La salle d'attente"
+  },
+  {
+   "frame": 60,
+   "label": "L'accueil"
+  },
+  {
+   "frame": 80,
+   "label": "Radio panoramique sur place"
+  },
+  {
+   "frame": 124,
+   "label": "Le cabinet du Docteur Denial"
+  },
+  {
+   "frame": 136,
+   "label": "La salle de soins"
+  },
+  {
+   "frame": 168,
+   "label": "4e étage, vue sur Agadir"
+  }
+ ]
+}
