@@ -202,32 +202,16 @@ section.light{position:relative;padding:clamp(96px,14vw,180px) 0}
 .head h2 em{font-style:italic;color:var(--gold-deep)}
 .head p{max-width:38ch;color:var(--muted)}
 .list{list-style:none;border-top:1px solid var(--line)}
-.soins-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(32px,5vw,80px);align-items:start}
-.list li{position:relative;display:grid;grid-template-columns:60px 1fr;gap:10px 20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line);transition:opacity .5s,padding .5s var(--ease);cursor:default}
-.list.has-on li{opacity:.42}
-.list.has-on li.on{opacity:1;padding-left:12px}
+.list li{position:relative;display:grid;grid-template-columns:70px 1fr 1.2fr;gap:24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line);transition:padding .5s var(--ease)}
+.list li:hover{padding-left:14px}
 .list .n{font:500 12px/1 var(--sans);letter-spacing:.12em;color:var(--gold-deep)}
-.list h3{font:300 clamp(28px,3.2vw,46px)/1 var(--serif);letter-spacing:-.02em}
-.list li.on h3{color:var(--gold-deep)}
-.list p{grid-column:2;color:var(--muted);font-size:16px;max-width:46ch}
-.list .thumb{display:none}
-.soin-fig{position:sticky;top:96px;margin:0}
-.soin-fig .im{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#ddd6ca;box-shadow:0 30px 80px rgba(21,20,15,.16)}
-.soin-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease),transform 1.2s var(--ease-out)}
-.soin-fig img.show{opacity:1;transform:none}
-.soin-fig figcaption{margin-top:14px;display:flex;gap:12px;align-items:baseline;font:400 20px/1.2 var(--serif)}
-.soin-fig figcaption b{font:500 12px/1 var(--sans);letter-spacing:.12em;color:var(--gold-deep)}
-@media (max-width:1099px){
-  .soins-grid{grid-template-columns:1fr}
-  .soin-fig{display:none}
-  .list.has-on li{opacity:1}.list.has-on li.on{padding-left:0}.list li.on h3{color:inherit}
-  .list li{grid-template-columns:44px 1fr 96px;align-items:start}
-  .list .n{grid-column:1;grid-row:1;padding-top:10px}
-  .list h3{grid-column:2;grid-row:1}
-  .list p{grid-column:2;grid-row:2}
-  .list .thumb{display:block;grid-column:3;grid-row:1/span 2;width:96px;height:96px;object-fit:cover;border-radius:16px;align-self:center}
-}
-@media (max-width:420px){.list li{grid-template-columns:34px 1fr 78px}.list .thumb{width:78px;height:78px}}
+.list h3{font:300 clamp(28px,3.4vw,48px)/1 var(--serif);letter-spacing:-.02em}
+.list p{color:var(--muted);font-size:16px;max-width:46ch}
+@media (max-width:820px){.list li{grid-template-columns:44px 1fr}.list p{grid-column:2}}
+.peek{position:fixed;left:0;top:0;z-index:40;width:260px;aspect-ratio:4/5;border-radius:16px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-3deg);transition:opacity .35s,transform .5s var(--ease-out);box-shadow:0 30px 80px rgba(21,20,15,.25)}
+.peek.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.peek img{width:100%;height:100%;object-fit:cover}
+@media (hover:none){.peek{display:none}}
 
 /* Avant / après */
 .ba-wrap{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"media head" "media list";column-gap:clamp(32px,5vw,80px);row-gap:0;align-items:start}
@@ -431,8 +415,7 @@ footer .copy{opacity:.6}
       <h2 class="reveal">Les <em>soins</em></h2>
       <p class="reveal">Six domaines de soins, au même étage. Le plan de traitement se décide après le bilan, au fauteuil.</p>
     </div>
-    <div class="soins-grid">
-    <ol class="list" id="soinsList">
+    <ol class="list">
       <li class="reveal" data-peek="media/ba/ortho_face.webp"><span class="n">01</span><h3>Orthodontie</h3><p>Bagues, fils et suivi régulier pour aligner les dents et corriger l'occlusion, chez l'adolescent comme chez l'adulte.</p></li>
       <li class="reveal" data-peek="media/ba/implants.webp"><span class="n">02</span><h3>Implantologie</h3><p>Remplacer une dent ou toute une arcade sur implants, après examen et radio panoramique.</p></li>
       <li class="reveal" data-peek="media/ba/supraclusie.webp"><span class="n">03</span><h3>Dentisterie esthétique</h3><p>Forme, teinte et alignement du sourire, pensés avec le patient.</p></li>
@@ -440,12 +423,8 @@ footer .copy{opacity:.6}
       <li class="reveal" data-peek="media/stills/panoramique.webp"><span class="n">05</span><h3>Chirurgie</h3><p>Extractions et actes de chirurgie buccale, préparés sur radiographie.</p></li>
       <li class="reveal" data-peek="media/stills/soins_bleu.webp"><span class="n">06</span><h3>Soins</h3><p>Caries, détartrage, contrôles : l'entretien de tous les jours.</p></li>
     </ol>
-    <figure class="soin-fig" id="soinFig" aria-hidden="true">
-      <div class="im"><img id="soinImgA" alt=""><img id="soinImgB" alt=""></div>
-      <figcaption><b id="soinNum">01</b><span id="soinCap">Orthodontie</span></figcaption>
-    </figure>
-    </div>
   </div>
+  <div class="peek" id="peek" aria-hidden="true"><img alt="" id="peekImg"></div>
 </section>
 
 <section class="light" id="avant-apres">
@@ -705,38 +684,19 @@ document.querySelectorAll(".reveal,#vid").forEach(el => io.observe(el));
 const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target.querySelector("video"); if (!e.isIntersecting) v.pause(); else if (e.target.classList.contains("in")) v.play().catch(() => {}); }));
 vio.observe($("#vid"));
 
-/* ===== Soins : image fixe à côté de la liste (ordinateur), vignette par ligne (téléphone) ===== */
-const sList = $("#soinsList"), sRows = [...sList.children], sA = $("#soinImgA"), sB = $("#soinImgB");
-const sNum = $("#soinNum"), sCap = $("#soinCap");
-let sOn = -1, sFront = sA, sHover = false;
-sRows.forEach((li, i) => {
-  const t = document.createElement("img"); t.className = "thumb"; t.loading = "lazy"; t.alt = ""; t.src = li.dataset.peek;
-  if (li.dataset.peek.includes("/ba/")) t.style.objectPosition = "center 85%";
-  li.appendChild(t);
-  li.addEventListener("mouseenter", () => { sHover = true; setSoin(i); });
-  li.addEventListener("mouseleave", () => { sHover = false; });
+/* ===== Aperçu au survol des soins ===== */
+const peek = $("#peek"), peekImg = $("#peekImg");
+let px = 0, py = 0, tx = 0, ty = 0;
+document.querySelectorAll(".list li").forEach(li => {
+  li.addEventListener("mouseenter", () => { peekImg.src = li.dataset.peek; peek.classList.add("on"); });
+  li.addEventListener("mouseleave", () => peek.classList.remove("on"));
 });
-function setSoin(i) {
-  if (i === sOn) return; sOn = i;
-  sRows.forEach((li, k) => li.classList.toggle("on", k === i)); sList.classList.add("has-on");
-  const back = sFront === sA ? sB : sA, src = sRows[i].dataset.peek;
-  back.style.objectPosition = src.includes("/ba/") ? "center 80%" : "center";
-  const swap = () => { back.classList.add("show"); sFront.classList.remove("show"); sFront = back; };
-  if (back.getAttribute("src") === src && back.complete) swap(); else { back.onload = swap; back.src = src; }
-  sNum.textContent = String(i + 1).padStart(2, "0"); sCap.textContent = sRows[i].querySelector("h3").textContent;
-}
-function soinsScroll() {
-  if (sHover || innerWidth < 1100) return;
-  const r = sList.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
-  const mid = innerHeight * .5; let best = 0, bd = 1e9;
-  sRows.forEach((li, k) => { const b = li.getBoundingClientRect(), d = Math.abs(b.top + b.height / 2 - mid); if (d < bd) { bd = d; best = k; } });
-  setSoin(best);
-}
-setSoin(0);
+addEventListener("mousemove", e => { tx = e.clientX + 150; ty = e.clientY; });
+(function follow() { px = lerp(px, tx, .14); py = lerp(py, ty, .14); peek.style.left = px + "px"; peek.style.top = py + "px"; requestAnimationFrame(follow); })();
 
 /* ===== Défilement ===== */
 let lenis = null;
-function onScroll() { frame(); manifest(); hscroll(); soinsScroll(); }
+function onScroll() { frame(); manifest(); hscroll(); }
 function go(y, dur, linear) {
   if (lenis) lenis.scrollTo(y, { duration: dur, easing: linear ? (t => t) : (t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2) });
   else scrollTo({ top: y, behavior: "smooth" });
