@@ -3,9 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Denial Dental Center · Agadir</title>
-<meta name="description" content="Maquette de site pour Denial Dental Center, cabinet du Dr DENIAL Mohamed Amine, immeuble Timitar, avenue Hassan II, Agadir.">
+<title>Denial Dental Center – Dentiste à Agadir, Dr Mohamed Amine Denial</title>
+<meta name="description" content="Cabinet dentaire, avenue Hassan II, immeuble Timitar (4e étage), Agadir. Soins, orthodontie, implants, esthétique et blanchiment. Rendez-vous par téléphone ou sur DabaDoc.">
+<!-- Démonstration : non indexée tant que le site n'est pas sur le domaine du cabinet (voir l'étude SEO) -->
 <meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:site_name" content="Denial Dental Center">
+<meta property="og:title" content="Denial Dental Center – Dentiste à Agadir">
+<meta property="og:description" content="Soins, orthodontie, implants, esthétique et blanchiment. Immeuble Timitar, avenue Hassan II, 4e étage, Agadir.">
+<!-- Adresse de démonstration : à remplacer par le domaine du cabinet au lancement (avec la balise canonique) -->
+<meta property="og:url" content="https://abdellatif444.github.io/denial-dental-center/">
+<meta property="og:image" content="https://abdellatif444.github.io/denial-dental-center/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Accueil du cabinet Denial Dental Center avec son logo doré">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D1012">
+<link rel="preload" as="image" href="media/frames/f_0001.webp" type="image/webp" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Dentist", "MedicalClinic"],
+  "name": "Denial Dental Center",
+  "url": "https://abdellatif444.github.io/denial-dental-center/",
+  "description": "Cabinet dentaire du Dr DENIAL Mohamed Amine à Agadir : soins, orthodontie, implantologie, dentisterie esthétique, blanchiment et chirurgie.",
+  "image": "https://abdellatif444.github.io/denial-dental-center/media/og.jpg",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Immeuble+Timitar+Avenue+Hassan+II+Agadir",
+  "isAcceptingNewPatients": true,
+  "knowsLanguage": ["fr", "ar"],
+  "telephone": ["+212528292029", "+212603262807"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenue Hassan II, immeuble Timitar, 4e étage",
+    "addressLocality": "Agadir",
+    "postalCode": "80000",
+    "addressCountry": "MA"
+  },
+  "medicalSpecialty": "Dentistry",
+  "availableService": [
+    {"@type": "MedicalProcedure", "name": "Orthodontie"},
+    {"@type": "MedicalProcedure", "name": "Implantologie"},
+    {"@type": "MedicalProcedure", "name": "Dentisterie esthétique"},
+    {"@type": "MedicalProcedure", "name": "Blanchiment dentaire"},
+    {"@type": "MedicalProcedure", "name": "Chirurgie buccale"},
+    {"@type": "MedicalProcedure", "name": "Soins dentaires"}
+  ],
+  "employee": {"@type": "Person", "name": "Dr DENIAL Mohamed Amine", "jobTitle": "Chirurgien-dentiste"},
+  "sameAs": ["https://www.instagram.com/denialdentalcenter/", "https://dabadoc.com/ma/en/orthodontist/agadir/mohamed-amine-denial"]
+}
+</script>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,23 +109,37 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .call{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border-radius:99px;background:var(--gold);color:#1a140a;text-decoration:none;font-weight:600;font-size:14px;transition:transform .3s var(--ease),background .3s}
 .call:hover{transform:translateY(-2px);background:#c9a35c}
 .call svg{width:16px;height:16px}
-@media (max-width:980px){.nav ul{display:none}.nav .call{display:none}.nav .tag{margin-left:auto}}
+.menu-btn{display:none;margin-left:auto;position:relative;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 12px}
+.menu-btn span{position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+.menu-btn span:first-child{transform:translateY(-4px)}.menu-btn span:nth-child(2){transform:translateY(4px)}
+.menu-btn[aria-expanded="true"] span:first-child{transform:rotate(45deg)}.menu-btn[aria-expanded="true"] span:nth-child(2){transform:rotate(-45deg)}
+.menu-btn b{font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding-left:16px}
+.mnav{position:fixed;inset:0;z-index:48;background:var(--night);color:var(--cream);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:90px var(--gut) 40px}
+.mnav[hidden]{display:none}
+.mnav a{display:flex;gap:16px;align-items:baseline;min-height:56px;padding:8px 0;text-decoration:none;font:300 36px/1.1 var(--serif);border-bottom:1px solid rgba(244,239,230,.1)}
+.mnav a b{font:500 11px/1 var(--sans);letter-spacing:.12em;color:var(--gold)}
+.mnav a.call{margin-top:24px;justify-content:center;font:600 15px/1 var(--sans);border:0}
+.nav.open{background:transparent;color:var(--cream);border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media (max-width:980px){.nav ul{display:none}.nav .call{display:none}.menu-btn{display:inline-flex}}
 
 /* ===== Visite au défilement ===== */
-.tour{position:relative;height:780vh;background:var(--night);color:var(--cream)}
+.tour{position:relative;height:var(--tourH,780vh);background:var(--night);color:var(--cream)}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .amb{position:absolute;inset:-8%;width:116%;height:116%;filter:blur(38px) saturate(1.15) brightness(.55);opacity:.9;transform:scale(1.05)}
 .shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(13,16,18,.1),rgba(13,16,18,.78) 75%)}
 .arch{position:absolute;left:50%;top:50%;width:var(--aw);height:var(--ah);transform:translate(-50%,-50%) scale(var(--s,1));border-radius:calc(var(--aw)/2) calc(var(--aw)/2) 18px 18px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 1px rgba(244,239,230,.08);will-change:transform}
-.arch canvas{width:100%;height:100%}
+.arch canvas{position:relative;width:100%;height:100%}
+.arch .first{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arch.live .first{visibility:hidden}
 .arch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);pointer-events:none}
 .stage{--ah:min(80vh,80svh);--aw:calc(var(--ah)*.5625)}
+@media (max-width:980px){.tour{--tourH:600vh}}
 @media (max-aspect-ratio:3/4){.stage{--aw:min(84vw,calc(78svh*.5625*1.25));--ah:min(calc(var(--aw)*1.6),72svh)}}
 
 .intro{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none;padding:0 var(--gut)}
-.intro h1{font:300 clamp(56px,11.5vw,184px)/.9 var(--serif);letter-spacing:-.035em;text-shadow:0 10px 60px rgba(0,0,0,.45)}
-.intro h1 em{font-style:italic;color:var(--gold)}
-.intro p{margin-top:22px;font:500 12px/1.6 var(--sans);letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.intro .display{font:300 clamp(56px,11.5vw,184px)/.9 var(--serif);letter-spacing:-.035em;text-shadow:0 10px 60px rgba(0,0,0,.45)}
+.intro .display em{font-style:italic;color:var(--gold)}
+.intro h1{margin:22px auto 0;max-width:62ch;font:500 12px/1.7 var(--sans);letter-spacing:.28em;text-transform:uppercase;opacity:.9;text-shadow:0 2px 18px rgba(0,0,0,.6)}
 .intro .ch{display:inline-block;transform:translateY(105%);opacity:0;transition:transform 1.1s var(--ease-out),opacity 1.1s}
 .ready .intro .ch{transform:none;opacity:1}
 .hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font:500 11px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;opacity:.75}
@@ -152,8 +214,17 @@ section.light{position:relative;padding:clamp(96px,14vw,180px) 0}
 @media (hover:none){.peek{display:none}}
 
 /* Avant / après */
-.ba-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,80px);align-items:center}
-@media (max-width:900px){.ba-wrap{grid-template-columns:1fr}}
+.ba-wrap{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"media head" "media list";column-gap:clamp(32px,5vw,80px);row-gap:0;align-items:start}
+.ba-head{grid-area:head;align-self:end}
+.ba-media{grid-area:media;align-self:center;margin:0}
+.ba-list{grid-area:list}
+.ba-head h2{margin-top:18px;font:300 clamp(36px,4.6vw,70px)/1 var(--serif);letter-spacing:-.03em}
+.ba-head h2 em{font-style:italic;color:var(--gold-deep)}
+.howto{margin-top:20px;display:flex;gap:12px;align-items:center;font-size:15px;color:var(--muted)}
+.howto svg{flex:0 0 auto;width:34px;height:34px;padding:8px;border-radius:50%;background:var(--ink);color:var(--cream)}
+.ba-cap{margin-top:14px;display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--muted)}
+.ba-cap b{font:400 18px/1.2 var(--serif);color:var(--ink)}
+@media (max-width:900px){.ba-wrap{grid-template-columns:1fr;grid-template-areas:"head" "media" "list";row-gap:24px}}
 .compare{position:relative;aspect-ratio:var(--ar,2/1);border-radius:22px;overflow:hidden;background:#222;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize;box-shadow:0 30px 90px rgba(21,20,15,.18)}
 .compare .layer{position:absolute;inset:0;background-size:100% 200%;background-repeat:no-repeat}
 .compare .before{background-position:center top}
@@ -164,8 +235,10 @@ section.light{position:relative;padding:clamp(96px,14vw,180px) 0}
 .compare .knob svg{width:22px;height:22px;color:var(--ink)}
 .compare .lab{position:absolute;top:16px;font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(13,16,18,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 12px;border-radius:99px}
 .compare .lab.l{left:16px}.compare .lab.r{right:16px}
+@media (max-width:560px){.compare .lab .long{display:none}.compare .lab{top:12px}.compare .lab.l{left:12px}.compare .lab.r{right:12px}}
 .compare.swap .layer{transition:opacity .5s}
-.cases{list-style:none;display:grid;gap:6px;margin-top:32px}
+.cases{list-style:none;display:grid;gap:6px;margin-top:28px}
+@media (max-width:900px){.cases{margin-top:0}}
 .cases button{width:100%;text-align:left;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;min-height:56px;padding:12px 16px;border-radius:14px;transition:background .3s}
 .cases button:hover{background:rgba(21,20,15,.05)}
 .cases button[aria-selected="true"]{background:var(--ink);color:var(--cream)}
@@ -243,6 +316,9 @@ footer p{margin-top:14px;max-width:60ch}
 .dock a.p{background:var(--gold);color:#1a140a}
 .dock svg{width:16px;height:16px}
 @media (max-width:980px){.dock{display:flex}}
+body.menu-open .dock{transform:translateY(140%)}
+footer .fcol a{display:inline-block;padding:10px 0;color:var(--cream)}
+footer .copy{opacity:.6}
 
 @media (prefers-reduced-motion:reduce){
   .grain,.hint i{animation:none}
@@ -268,9 +344,18 @@ footer p{margin-top:14px;max-width:60ch}
     <li><a href="#cabinet">Le cabinet</a></li>
     <li><a href="#rdv">Rendez-vous</a></li>
   </ul>
-  <span class="tag" title="Maquette de démonstration préparée pour le cabinet">Maquette</span>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav"><span></span><span></span><b>Menu</b></button>
   <a class="call" href="tel:+212528292029"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>05 28 29 20 29</a>
 </header>
+
+<nav class="mnav" id="mnav" aria-label="Menu" hidden>
+  <a href="#soins"><b>01</b>Soins</a>
+  <a href="#avant-apres"><b>02</b>Avant / après</a>
+  <a href="#cabinet"><b>03</b>Le praticien</a>
+  <a href="#lieux"><b>04</b>Les lieux</a>
+  <a href="#rdv"><b>05</b>Rendez-vous</a>
+  <a class="call" href="tel:+212528292029">Appeler le 05 28 29 20 29</a>
+</nav>
 
 <main id="top">
 <!-- Entrée : la vraie visite du cabinet, image par image, au rythme du défilement -->
@@ -278,12 +363,12 @@ footer p{margin-top:14px;max-width:60ch}
   <div class="stage" id="stage">
     <canvas class="amb" id="amb" width="48" height="85" aria-hidden="true"></canvas>
     <div class="shade" aria-hidden="true"></div>
-    <div class="arch" id="arch"><canvas id="cv" role="img" aria-label="Visite filmée du cabinet : immeuble Timitar, salle d'attente, accueil, radio panoramique, salles de soins et vue sur Agadir"></canvas></div>
+    <div class="arch" id="arch"><img class="first" id="first" src="media/frames/f_0001.webp" width="600" height="1066" fetchpriority="high" alt="Façade de l'immeuble Timitar, avenue Hassan II, Agadir, où se trouve le cabinet au 4e étage"><canvas id="cv" role="img" aria-label="Visite filmée du cabinet : immeuble Timitar, salle d'attente, accueil, radio panoramique, salles de soins et vue sur Agadir"></canvas></div>
 
     <div class="intro" id="intro">
       <div>
-        <h1><span class="ch" style="transition-delay:.05s">Votre</span> <span class="ch" style="transition-delay:.15s"><em>sourire</em>,</span><br><span class="ch" style="transition-delay:.25s">au 4<sup style="font-size:.4em;vertical-align:.9em">e</sup> étage</span></h1>
-        <p class="ch" style="transition-delay:.45s">Dr DENIAL Mohamed Amine · Chirurgien-dentiste · Agadir</p>
+        <p class="display"><span class="ch" style="transition-delay:.05s">Votre</span> <span class="ch" style="transition-delay:.15s"><em>sourire</em>,</span><br><span class="ch" style="transition-delay:.25s">au 4<sup style="font-size:.4em;vertical-align:.9em">e</sup> étage</span></p>
+        <h1 class="ch" style="transition-delay:.45s">Denial Dental Center · Cabinet dentaire à Agadir · Dr DENIAL Mohamed Amine</h1>
       </div>
     </div>
     <div class="hint tour-ui" id="hint"><span>Entrez</span><i></i></div>
@@ -344,19 +429,23 @@ footer p{margin-top:14px;max-width:60ch}
 
 <section class="light" id="avant-apres">
   <div class="wrap ba-wrap">
-    <div>
-      <div class="compare reveal" id="compare" role="slider" tabindex="0" aria-label="Comparer avant et après" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50 % après">
+    <div class="ba-head">
+      <div class="eyebrow reveal">Résultats du cabinet</div>
+      <h2 class="reveal">Les dents <em>avant</em> et <em>après</em> le traitement</h2>
+      <p class="howto reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>Faites glisser le rond blanc vers la gauche ou la droite pour comparer.</p>
+    </div>
+    <figure class="ba-media">
+      <div class="compare reveal" id="compare" role="slider" tabindex="0" aria-label="Comparer les dents avant et après le traitement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50 % après">
         <div class="layer before" id="lb"></div>
         <div class="layer after" id="la"></div>
         <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div></div>
-        <span class="lab l">Avant</span><span class="lab r">Après</span>
+        <span class="lab l">Avant<span class="long"> traitement</span></span><span class="lab r">Après<span class="long"> traitement</span></span>
       </div>
-    </div>
-    <div>
-      <div class="eyebrow reveal">Résultats du cabinet</div>
-      <div class="head" style="margin:18px 0 0"><h2 class="reveal">Avant, <em>après</em></h2></div>
-      <ul class="cases reveal" role="tablist" aria-label="Cas" id="cases"></ul>
-      <p class="note reveal">Photos publiées par le cabinet sur son compte Instagram, sans retouche de notre part. Chaque bouche est différente : le résultat dépend du bilan et du traitement suivi.</p>
+      <figcaption class="ba-cap" id="baCap" aria-live="polite"></figcaption>
+    </figure>
+    <div class="ba-list">
+      <ul class="cases reveal" role="tablist" aria-label="Choisir un cas" id="cases"></ul>
+      <p class="note reveal">Le plan de traitement est établi après un examen au cabinet.</p>
     </div>
   </div>
 </section>
@@ -372,7 +461,7 @@ footer p{margin-top:14px;max-width:60ch}
         <div><dt>Adresse</dt><dd>Avenue Hassan II, immeuble Timitar, 4e étage, Agadir 80000</dd></div>
         <div><dt>Téléphone</dt><dd><a href="tel:+212528292029">05 28 29 20 29</a><br><a href="tel:+212603262807">06 03 26 28 07</a></dd></div>
         <div><dt>Domaines</dt><dd>Orthodontie, implantologie, esthétique, blanchiment, chirurgie, soins</dd></div>
-        <div><dt>En ligne</dt><dd><a href="https://www.dabadoc.com/d/PgDT" target="_blank" rel="noopener">DabaDoc</a> · <a href="https://www.instagram.com/denialdentalcenter/" target="_blank" rel="noopener">Instagram</a></dd></div>
+        <div><dt>En ligne</dt><dd><a href="https://dabadoc.com/ma/en/orthodontist/agadir/mohamed-amine-denial" target="_blank" rel="noopener">DabaDoc</a> · <a href="https://www.instagram.com/denialdentalcenter/" target="_blank" rel="noopener">Instagram</a></dd></div>
       </dl>
     </div>
   </div>
@@ -380,7 +469,7 @@ footer p{margin-top:14px;max-width:60ch}
 
 <section class="hscroll" id="lieux" aria-label="Les lieux">
   <div class="pin">
-    <div class="ttl"><h2 class="serif">Les lieux</h2><small>Images tirées de la visite filmée par le cabinet.</small></div>
+    <div class="ttl"><h2 class="serif">Les lieux</h2><small>Le 4e étage de l'immeuble Timitar, de la salle d'attente aux salles de soins.</small></div>
     <div class="track" id="track">
       <figure><div class="im"><img src="media/stills/attente.webp" alt="Salle d'attente, fauteuils jaunes et bruns, boiseries claires" loading="lazy"></div><figcaption><b>01</b>Salle d'attente</figcaption></figure>
       <figure><div class="im"><img src="media/stills/accueil.webp" alt="Accueil avec le logo doré Denial Dental Center" loading="lazy"></div><figcaption><b>02</b>Accueil</figcaption></figure>
@@ -403,7 +492,7 @@ footer p{margin-top:14px;max-width:60ch}
       <a class="phone reveal" href="tel:+212603262807"><small>Mobile</small><b>06 03 26 28 07</b></a>
     </div>
     <div class="row reveal">
-      <a class="btn dark" href="https://www.dabadoc.com/d/PgDT" target="_blank" rel="noopener">Réserver sur DabaDoc<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <a class="btn dark" href="https://dabadoc.com/ma/en/orthodontist/agadir/mohamed-amine-denial" target="_blank" rel="noopener">Réserver sur DabaDoc<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
       <a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Immeuble+Timitar+Avenue+Hassan+II+Agadir" target="_blank" rel="noopener">Itinéraire</a>
     </div>
   </div>
@@ -412,14 +501,18 @@ footer p{margin-top:14px;max-width:60ch}
 
 <footer>
   <div class="wrap">
-    <div><b>Denial</b><p>Denial Dental Center · Dr DENIAL Mohamed Amine · Avenue Hassan II, immeuble Timitar, 4e étage, Agadir 80000.</p></div>
-    <div><p><strong>Maquette de démonstration</strong>, mise en ligne avec l'accord du cabinet pour lui montrer ce que pourrait être son site. Toutes les photos et vidéos sont celles que le cabinet a publiées sur Instagram ; aucun visage de patient n'est montré. Textes rédigés avec l'aide d'une IA à partir des informations publiques du cabinet, à valider par le docteur.</p></div>
+    <div><b>Denial</b><p>Denial Dental Center · Dr DENIAL Mohamed Amine, chirurgien-dentiste.<br>Avenue Hassan II, immeuble Timitar, 4e étage, Agadir 80000.</p></div>
+    <div class="fcol">
+      <p><a href="tel:+212528292029">05 28 29 20 29</a> · <a href="tel:+212603262807">06 03 26 28 07</a></p>
+      <p><a href="https://dabadoc.com/ma/en/orthodontist/agadir/mohamed-amine-denial" target="_blank" rel="noopener">DabaDoc</a> · <a href="https://www.instagram.com/denialdentalcenter/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Timitar+Avenue+Hassan+II+Agadir" target="_blank" rel="noopener">Itinéraire</a></p>
+      <p class="copy">© 2026 Denial Dental Center</p>
+    </div>
   </div>
 </footer>
 
 <nav class="dock" id="dock" aria-label="Actions rapides">
   <a class="p" href="tel:+212528292029"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
-  <a href="https://www.dabadoc.com/d/PgDT" target="_blank" rel="noopener">Réserver</a>
+  <a href="https://dabadoc.com/ma/en/orthodontist/agadir/mohamed-amine-denial" target="_blank" rel="noopener">Réserver</a>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
@@ -458,6 +551,7 @@ function draw(i) {
   const im = f.img, W = cv.width, H = cv.height, s = Math.max(W / im.width, H / im.height);
   const w = im.width * s, h = im.height * s;
   ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
+  arch.classList.add("live");
   actx.drawImage(im, 0, 0, amb.width, amb.height);
 }
 function load(i) {
@@ -467,7 +561,8 @@ function load(i) {
 }
 async function loadAll(onFirst) {
   const n = M.count, order = [], seen = new Set();
-  for (const step of [16, 8, 4, 2, 1]) for (let i = 0; i < n; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
+  const lite = !!(navigator.connection && navigator.connection.saveData); // économie de données : une image sur quatre
+  for (const step of (lite ? [16, 8, 4] : [16, 8, 4, 2, 1])) for (let i = 0; i < n; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
   const first = order.filter(i => i < (M.chapters[1] ? M.chapters[1].frame : 16) || i % 16 === 0);
   const rest = order.filter(i => !first.includes(i));
   let done = 0; const tick = () => { done++; onFirst(done / first.length); };
@@ -554,7 +649,8 @@ function setX(x) { x = clamp(x, 0, 100); cmp.style.setProperty("--x", x + "%"); 
 function showCase(i) {
   const c = CASES[i], url = `url(media/ba/${c.f}.webp)`;
   cmp.style.setProperty("--ar", c.ar); lb.style.backgroundImage = url; la.style.backgroundImage = url;
-  cmp.setAttribute("aria-label", `Comparer avant et après : ${c.t}`);
+  cmp.setAttribute("aria-label", `Comparer les dents avant et après le traitement : ${c.t}`);
+  setCap(i);
   casesEl.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-selected", k === i));
   sweep();
 }
@@ -574,7 +670,8 @@ function sweep() { // petit mouvement pour montrer qu'on peut glisser
     setX(lerp(xa, xb, e)); if (t < keys[keys.length - 1][0]) sweepRaf = requestAnimationFrame(step); };
   sweepRaf = requestAnimationFrame(step);
 }
-lb.style.backgroundImage = la.style.backgroundImage = `url(media/ba/${CASES[0].f}.webp)`; cmp.style.setProperty("--ar", CASES[0].ar);
+function setCap(i) { $("#baCap").innerHTML = `<span>Cas ${String(i + 1).padStart(2, "0")}</span><b>${CASES[i].t}</b><span>· ${CASES[i].d}</span>`; }
+lb.style.backgroundImage = la.style.backgroundImage = `url(media/ba/${CASES[0].f}.webp)`; cmp.style.setProperty("--ar", CASES[0].ar); setCap(0);
 
 /* ===== Apparitions ===== */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in");
@@ -604,6 +701,18 @@ function go(y, dur, linear) {
 }
 $("#play").addEventListener("click", () => { const end = tour.offsetTop + (tour.offsetHeight - innerHeight) * (T1 + .03); go(end, 16, true); });
 $("#skip").addEventListener("click", () => go(tour.offsetTop + tour.offsetHeight, 1.6));
+/* Menu téléphone */
+const menuBtn = $("#menuBtn"), mnav = $("#mnav");
+function setMenu(open) {
+  mnav.hidden = !open; menuBtn.setAttribute("aria-expanded", open); nav.classList.toggle("open", open);
+  menuBtn.querySelector("b").textContent = open ? "Fermer" : "Menu";
+  if (lenis) open ? lenis.stop() : lenis.start();
+  document.body.style.overflow = open ? "hidden" : "";
+  document.body.classList.toggle("menu-open", open);
+}
+menuBtn.addEventListener("click", () => setMenu(mnav.hidden));
+mnav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+addEventListener("keydown", e => { if (e.key === "Escape" && !mnav.hidden) { setMenu(false); menuBtn.focus(); } });
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => { const t = document.querySelector(a.getAttribute("href")); if (!t) return; e.preventDefault(); go(a.getAttribute("href") === "#top" ? 0 : t.getBoundingClientRect().top + scrollY - 60, 1.6); }));
 
 addEventListener("resize", () => { sizeCanvas(); sizeH(); onScroll(); });
@@ -615,7 +724,7 @@ let shownPct = 0, targetPct = 0, forceDone = false;
 (function tickLoader() { const tgt = forceDone ? 100 : targetPct; shownPct = lerp(shownPct, tgt, .12);
   bar.style.transform = `scaleX(${shownPct / 100})`; pct.textContent = Math.round(shownPct) + " %";
   if (shownPct > 99.4) { loader.classList.add("done"); document.body.classList.add("ready"); return; } requestAnimationFrame(tickLoader); })();
-setTimeout(() => { forceDone = true; }, 6000);
+setTimeout(() => { forceDone = true; }, 3000);
 
 addEventListener("load", () => {
   if (window.Lenis && !reduce) { lenis = new Lenis({ lerp: .08, smoothWheel: true }); window.denialLenis = lenis; lenis.on("scroll", onScroll);
