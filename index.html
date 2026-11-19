@@ -670,6 +670,8 @@ function sweep() { // petit mouvement pour montrer qu'on peut glisser
     setX(lerp(xa, xb, e)); if (t < keys[keys.length - 1][0]) sweepRaf = requestAnimationFrame(step); };
   sweepRaf = requestAnimationFrame(step);
 }
+// précharger les six avant/après pour éviter un écran noir au changement de cas
+addEventListener("load", () => CASES.forEach(c => { const im = new Image(); im.src = `media/ba/${c.f}.webp`; }));
 function setCap(i) { $("#baCap").innerHTML = `<span>Cas ${String(i + 1).padStart(2, "0")}</span><b>${CASES[i].t}</b><span>· ${CASES[i].d}</span>`; }
 lb.style.backgroundImage = la.style.backgroundImage = `url(media/ba/${CASES[0].f}.webp)`; cmp.style.setProperty("--ar", CASES[0].ar); setCap(0);
 
